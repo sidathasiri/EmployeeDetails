@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 namespace EmployeeDetails
 {
     class EmployeeServices{
-        public void insertEmployee(Employee employee) { 
-            //insert employee
+
+        EmployeeDao employeeDao = new EmployeeDao();
+
+        public void insertEmployee(Employee employee) {
+            employeeDao.insertEmployee(employee);
         }
 
         public void updateEmployee(Employee employee) { 

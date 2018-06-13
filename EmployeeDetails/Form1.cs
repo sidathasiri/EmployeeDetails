@@ -12,9 +12,11 @@ namespace EmployeeDetails
 {
     public partial class Form1 : Form
     {
+        EmployeeServices employeeService = new EmployeeServices();
         public Form1()
         {
             InitializeComponent();
+            maleRadioButton.Checked = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -59,7 +61,22 @@ namespace EmployeeDetails
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            
+            Employee employee = new Employee();
+            employee.First_name = firstNameTextBox.Text;
+            employee.Last_name = lastNameTextBox.Text;
+            employee.Age = Int32.Parse(ageTextBox.Text);
+            if (maleRadioButton.Checked)
+                employee.Gender = "Male";
+            else
+                employee.Gender = "Female";
+            employee.Mobile = mobileTextBox.Text;
+            employee.Email = emailTextBox.Text;
+            employee.Add1 = addressLine1.Text;
+            employee.Add2 = addressLine2.Text;
+            employee.Add3 = addressLine3.Text;
+            employee.Department = departmntComboBox.Text;
+
+            employeeService.insertEmployee(employee);
         }
     }
 }
