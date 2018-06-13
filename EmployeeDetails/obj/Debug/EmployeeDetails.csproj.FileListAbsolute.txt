@@ -1,0 +1,8 @@
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\bin\Debug\EmployeeDetails.exe.config
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\bin\Debug\EmployeeDetails.exe
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\bin\Debug\EmployeeDetails.pdb
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.Form1.resources
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.Properties.Resources.resources
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.csproj.GenerateResource.Cache
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.exe
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.pdb
