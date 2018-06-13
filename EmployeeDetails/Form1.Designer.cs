@@ -34,8 +34,8 @@
             this.insert = new System.Windows.Forms.TabPage();
             this.update = new System.Windows.Forms.TabPage();
             this.delete = new System.Windows.Forms.TabPage();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.Label();
+            this.searchIdTextBox = new System.Windows.Forms.TextBox();
+            this.searchIdLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.resultLabel = new System.Windows.Forms.Label();
             this.enterDetailsLabel = new System.Windows.Forms.Label();
@@ -59,9 +59,30 @@
             this.departmentLabel = new System.Windows.Forms.Label();
             this.departmntComboBox = new System.Windows.Forms.ComboBox();
             this.submitButton = new System.Windows.Forms.Button();
+            this.updateIdlabel = new System.Windows.Forms.Label();
+            this.updateFindButton = new System.Windows.Forms.Button();
+            this.updateIdTextBox = new System.Windows.Forms.TextBox();
+            this.deleteIdLabel = new System.Windows.Forms.Label();
+            this.deleteIdtextBox = new System.Windows.Forms.TextBox();
+            this.deleteFindButton = new System.Windows.Forms.Button();
+            this.deleteDataGridView = new System.Windows.Forms.DataGridView();
+            this.deleteFindLabel = new System.Windows.Forms.Label();
+            this.updateDataGridView = new System.Windows.Forms.DataGridView();
+            this.updateFindLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.searchFirstNamelabel = new System.Windows.Forms.Label();
+            this.searchFirstNametextBox = new System.Windows.Forms.TextBox();
+            this.searchLastNameLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
             this.insert.SuspendLayout();
+            this.update.SuspendLayout();
+            this.delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -84,19 +105,24 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 78);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(907, 401);
+            this.tabControl1.Size = new System.Drawing.Size(907, 450);
             this.tabControl1.TabIndex = 1;
             // 
             // search
             // 
+            this.search.Controls.Add(this.dataGridView1);
+            this.search.Controls.Add(this.textBox1);
+            this.search.Controls.Add(this.searchLastNameLabel);
+            this.search.Controls.Add(this.searchFirstNametextBox);
+            this.search.Controls.Add(this.searchFirstNamelabel);
             this.search.Controls.Add(this.resultLabel);
             this.search.Controls.Add(this.searchButton);
-            this.search.Controls.Add(this.id);
-            this.search.Controls.Add(this.idTextBox);
+            this.search.Controls.Add(this.searchIdLabel);
+            this.search.Controls.Add(this.searchIdTextBox);
             this.search.Location = new System.Drawing.Point(4, 22);
             this.search.Name = "search";
             this.search.Padding = new System.Windows.Forms.Padding(3);
-            this.search.Size = new System.Drawing.Size(899, 375);
+            this.search.Size = new System.Drawing.Size(899, 424);
             this.search.TabIndex = 0;
             this.search.Text = "Search Data";
             this.search.UseVisualStyleBackColor = true;
@@ -128,49 +154,60 @@
             this.insert.Location = new System.Drawing.Point(4, 22);
             this.insert.Name = "insert";
             this.insert.Padding = new System.Windows.Forms.Padding(3);
-            this.insert.Size = new System.Drawing.Size(899, 375);
+            this.insert.Size = new System.Drawing.Size(899, 424);
             this.insert.TabIndex = 1;
             this.insert.Text = "Add Employee";
             this.insert.UseVisualStyleBackColor = true;
             // 
             // update
             // 
+            this.update.Controls.Add(this.updateFindLabel);
+            this.update.Controls.Add(this.updateDataGridView);
+            this.update.Controls.Add(this.updateIdTextBox);
+            this.update.Controls.Add(this.updateFindButton);
+            this.update.Controls.Add(this.updateIdlabel);
             this.update.Location = new System.Drawing.Point(4, 22);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(899, 375);
+            this.update.Size = new System.Drawing.Size(899, 424);
             this.update.TabIndex = 2;
             this.update.Text = "Update Details";
             this.update.UseVisualStyleBackColor = true;
             // 
             // delete
             // 
+            this.delete.Controls.Add(this.deleteButton);
+            this.delete.Controls.Add(this.deleteFindLabel);
+            this.delete.Controls.Add(this.deleteDataGridView);
+            this.delete.Controls.Add(this.deleteFindButton);
+            this.delete.Controls.Add(this.deleteIdtextBox);
+            this.delete.Controls.Add(this.deleteIdLabel);
             this.delete.Location = new System.Drawing.Point(4, 22);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(899, 375);
+            this.delete.Size = new System.Drawing.Size(899, 424);
             this.delete.TabIndex = 3;
             this.delete.Text = "Delete Employee";
             this.delete.UseVisualStyleBackColor = true;
             // 
-            // idTextBox
+            // searchIdTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(77, 27);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idTextBox.TabIndex = 0;
+            this.searchIdTextBox.Location = new System.Drawing.Point(95, 27);
+            this.searchIdTextBox.Name = "searchIdTextBox";
+            this.searchIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchIdTextBox.TabIndex = 0;
             // 
-            // id
+            // searchIdLabel
             // 
-            this.id.AutoSize = true;
-            this.id.Location = new System.Drawing.Point(25, 30);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(49, 13);
-            this.id.TabIndex = 1;
-            this.id.Text = "Enter ID:";
-            this.id.Click += new System.EventHandler(this.label1_Click_1);
+            this.searchIdLabel.AutoSize = true;
+            this.searchIdLabel.Location = new System.Drawing.Point(25, 30);
+            this.searchIdLabel.Name = "searchIdLabel";
+            this.searchIdLabel.Size = new System.Drawing.Size(49, 13);
+            this.searchIdLabel.TabIndex = 1;
+            this.searchIdLabel.Text = "Enter ID:";
+            this.searchIdLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(204, 27);
+            this.searchButton.Location = new System.Drawing.Point(403, 59);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 2;
@@ -182,7 +219,7 @@
             // 
             this.resultLabel.AutoSize = true;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultLabel.Location = new System.Drawing.Point(28, 80);
+            this.resultLabel.Location = new System.Drawing.Point(24, 105);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(70, 20);
             this.resultLabel.TabIndex = 3;
@@ -375,11 +412,147 @@
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
             // 
+            // updateIdlabel
+            // 
+            this.updateIdlabel.AutoSize = true;
+            this.updateIdlabel.Location = new System.Drawing.Point(27, 25);
+            this.updateIdlabel.Name = "updateIdlabel";
+            this.updateIdlabel.Size = new System.Drawing.Size(70, 13);
+            this.updateIdlabel.TabIndex = 0;
+            this.updateIdlabel.Text = "Employee ID:";
+            // 
+            // updateFindButton
+            // 
+            this.updateFindButton.Location = new System.Drawing.Point(219, 25);
+            this.updateFindButton.Name = "updateFindButton";
+            this.updateFindButton.Size = new System.Drawing.Size(75, 23);
+            this.updateFindButton.TabIndex = 1;
+            this.updateFindButton.Text = "Find";
+            this.updateFindButton.UseVisualStyleBackColor = true;
+            // 
+            // updateIdTextBox
+            // 
+            this.updateIdTextBox.Location = new System.Drawing.Point(104, 25);
+            this.updateIdTextBox.Name = "updateIdTextBox";
+            this.updateIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateIdTextBox.TabIndex = 2;
+            // 
+            // deleteIdLabel
+            // 
+            this.deleteIdLabel.AutoSize = true;
+            this.deleteIdLabel.Location = new System.Drawing.Point(33, 25);
+            this.deleteIdLabel.Name = "deleteIdLabel";
+            this.deleteIdLabel.Size = new System.Drawing.Size(64, 13);
+            this.deleteIdLabel.TabIndex = 0;
+            this.deleteIdLabel.Text = "Employe ID:";
+            // 
+            // deleteIdtextBox
+            // 
+            this.deleteIdtextBox.Location = new System.Drawing.Point(104, 22);
+            this.deleteIdtextBox.Name = "deleteIdtextBox";
+            this.deleteIdtextBox.Size = new System.Drawing.Size(100, 20);
+            this.deleteIdtextBox.TabIndex = 1;
+            // 
+            // deleteFindButton
+            // 
+            this.deleteFindButton.Location = new System.Drawing.Point(236, 21);
+            this.deleteFindButton.Name = "deleteFindButton";
+            this.deleteFindButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteFindButton.TabIndex = 2;
+            this.deleteFindButton.Text = "Find";
+            this.deleteFindButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteDataGridView
+            // 
+            this.deleteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.deleteDataGridView.Location = new System.Drawing.Point(36, 90);
+            this.deleteDataGridView.Name = "deleteDataGridView";
+            this.deleteDataGridView.Size = new System.Drawing.Size(828, 104);
+            this.deleteDataGridView.TabIndex = 3;
+            // 
+            // deleteFindLabel
+            // 
+            this.deleteFindLabel.AutoSize = true;
+            this.deleteFindLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteFindLabel.Location = new System.Drawing.Point(36, 64);
+            this.deleteFindLabel.Name = "deleteFindLabel";
+            this.deleteFindLabel.Size = new System.Drawing.Size(77, 13);
+            this.deleteFindLabel.TabIndex = 4;
+            this.deleteFindLabel.Text = "Find Results";
+            // 
+            // updateDataGridView
+            // 
+            this.updateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.updateDataGridView.Location = new System.Drawing.Point(30, 88);
+            this.updateDataGridView.Name = "updateDataGridView";
+            this.updateDataGridView.Size = new System.Drawing.Size(830, 111);
+            this.updateDataGridView.TabIndex = 3;
+            // 
+            // updateFindLabel
+            // 
+            this.updateFindLabel.AutoSize = true;
+            this.updateFindLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateFindLabel.Location = new System.Drawing.Point(30, 63);
+            this.updateFindLabel.Name = "updateFindLabel";
+            this.updateFindLabel.Size = new System.Drawing.Size(77, 13);
+            this.updateFindLabel.TabIndex = 4;
+            this.updateFindLabel.Text = "Find Results";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(791, 216);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
+            // searchFirstNamelabel
+            // 
+            this.searchFirstNamelabel.AutoSize = true;
+            this.searchFirstNamelabel.Location = new System.Drawing.Point(25, 64);
+            this.searchFirstNamelabel.Name = "searchFirstNamelabel";
+            this.searchFirstNamelabel.Size = new System.Drawing.Size(60, 13);
+            this.searchFirstNamelabel.TabIndex = 4;
+            this.searchFirstNamelabel.Text = "First Name:";
+            this.searchFirstNamelabel.Click += new System.EventHandler(this.searchFirstNamelabel_Click);
+            // 
+            // searchFirstNametextBox
+            // 
+            this.searchFirstNametextBox.Location = new System.Drawing.Point(95, 64);
+            this.searchFirstNametextBox.Name = "searchFirstNametextBox";
+            this.searchFirstNametextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchFirstNametextBox.TabIndex = 5;
+            // 
+            // searchLastNameLabel
+            // 
+            this.searchLastNameLabel.AutoSize = true;
+            this.searchLastNameLabel.Location = new System.Drawing.Point(218, 64);
+            this.searchLastNameLabel.Name = "searchLastNameLabel";
+            this.searchLastNameLabel.Size = new System.Drawing.Size(61, 13);
+            this.searchLastNameLabel.TabIndex = 6;
+            this.searchLastNameLabel.Text = "Last Name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(285, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(28, 139);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(839, 265);
+            this.dataGridView1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 489);
+            this.ClientSize = new System.Drawing.Size(931, 543);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.title);
             this.Name = "Form1";
@@ -390,6 +563,13 @@
             this.search.PerformLayout();
             this.insert.ResumeLayout(false);
             this.insert.PerformLayout();
+            this.update.ResumeLayout(false);
+            this.update.PerformLayout();
+            this.delete.ResumeLayout(false);
+            this.delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,8 +583,8 @@
         private System.Windows.Forms.TabPage insert;
         private System.Windows.Forms.TabPage update;
         private System.Windows.Forms.TabPage delete;
-        private System.Windows.Forms.Label id;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Label searchIdLabel;
+        private System.Windows.Forms.TextBox searchIdTextBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.Label departmentLabel;
@@ -428,6 +608,22 @@
         private System.Windows.Forms.Label enterDetailsLabel;
         private System.Windows.Forms.ComboBox departmntComboBox;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.TextBox updateIdTextBox;
+        private System.Windows.Forms.Button updateFindButton;
+        private System.Windows.Forms.Label updateIdlabel;
+        private System.Windows.Forms.Label deleteIdLabel;
+        private System.Windows.Forms.Button deleteFindButton;
+        private System.Windows.Forms.TextBox deleteIdtextBox;
+        private System.Windows.Forms.Label updateFindLabel;
+        private System.Windows.Forms.DataGridView updateDataGridView;
+        private System.Windows.Forms.Label deleteFindLabel;
+        private System.Windows.Forms.DataGridView deleteDataGridView;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label searchLastNameLabel;
+        private System.Windows.Forms.TextBox searchFirstNametextBox;
+        private System.Windows.Forms.Label searchFirstNamelabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

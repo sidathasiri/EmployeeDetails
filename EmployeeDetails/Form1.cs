@@ -39,10 +39,20 @@ namespace EmployeeDetails
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(idTextBox.Text);
+            Console.WriteLine(searchIdTextBox.Text);
         }
 
         private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchFirstNamelabel_Click(object sender, EventArgs e)
         {
 
         }
