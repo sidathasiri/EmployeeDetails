@@ -6,3 +6,4 @@ c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDe
 c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.csproj.GenerateResource.Cache
 c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.exe
 c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.pdb
+c:\users\sidath\documents\visual studio 2012\Projects\EmployeeDetails\EmployeeDetails\obj\Debug\EmployeeDetails.csprojResolveAssemblyReference.cache
