@@ -33,7 +33,8 @@ namespace EmployeeDetails
 
         private DataTable getEmployeeList() {
             DataTable employeeDataTable = new DataTable();
-            employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader());
+            String query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
+            employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
         }
 
@@ -49,7 +50,24 @@ namespace EmployeeDetails
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            employeeService.fetchAllEmployees();
+            searchResults.DataSource = getSearchResults();
+        }
+
+        private DataTable getSearchResults() {
+            DataTable employeeDataTable = new DataTable();
+            String query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE ";
+            String strId = searchIdTextBox.Text;
+            String fName = searchFirstNametextBox.Text;
+            String lName = searchLastNameTextBox.Text;
+
+            if (strId.Length > 0) {
+                int id = Int32.Parse(strId);
+                query += String.Format("id='{0}'", id);
+                Console.WriteLine("queryyyyyyy>>>>>>"+query);
+            }
+
+            employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
+            return employeeDataTable;
         }
 
         private void label1_Click_2(object sender, EventArgs e)
@@ -85,6 +103,7 @@ namespace EmployeeDetails
             employee.Department = departmntComboBox.Text;
 
             employeeService.insertEmployee(employee);
+            searchResults.DataSource = getEmployeeList();
         }
     }
 }

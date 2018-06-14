@@ -28,8 +28,8 @@ namespace EmployeeDetails
             //delete emp
         }
 
-        public MySqlDataReader getEmployeeDetailsDataReader() {
-            return employeeDao.getEmployeeDetailsDataReader();
+        public MySqlDataReader getEmployeeDetailsDataReader(String query) {
+            return employeeDao.getEmployeeDetailsDataReader(query);
         } 
     }
 }

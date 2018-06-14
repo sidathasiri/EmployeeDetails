@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace EmployeeDetails
 {
@@ -30,18 +31,24 @@ namespace EmployeeDetails
             connection = new MySqlConnection(connectionString);
         }
 
-        private void OpenConnection(){
+        public void OpenConnection(){
             try{
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                else
+                    return;
             }
             catch (MySqlException ex){
                 Console.WriteLine(ex);
             }
         }
 
-        private void CloseConnection(){
+        public void CloseConnection(){
             try{
-                connection.Close();
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+                else
+                    return;
             }
             catch (MySqlException ex)
             {

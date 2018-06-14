@@ -33,7 +33,7 @@ namespace EmployeeDetails
             List<Employee> employeeList = new List<Employee>();
             string query = "SELECT * FROM employees";
             MySqlConnection conn = dbConnector.getConnection();
-            conn.Open();
+            dbConnector.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader dataReader = cmd.ExecuteReader();
             while (dataReader.Read()) {
@@ -50,17 +50,16 @@ namespace EmployeeDetails
                 emp.Department = (string)dataReader["department"];
                 employeeList.Add(emp);
             }
-            conn.Close();
+            dbConnector.CloseConnection();
 
             return employeeList;
 
         }
 
-        public MySqlDataReader getEmployeeDetailsDataReader() {
-            string query = "SELECT * FROM employees";
+        public MySqlDataReader getEmployeeDetailsDataReader(String query) {
             MySqlConnection conn = dbConnector.getConnection();
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(query, conn);
+            dbConnector.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, conn); 
             return cmd.ExecuteReader();
         }
 

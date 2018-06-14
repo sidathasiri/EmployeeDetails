@@ -32,7 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.search = new System.Windows.Forms.TabPage();
             this.searchResults = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchLastNameTextBox = new System.Windows.Forms.TextBox();
             this.searchLastNameLabel = new System.Windows.Forms.Label();
             this.searchFirstNametextBox = new System.Windows.Forms.TextBox();
             this.searchFirstNamelabel = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             // search
             // 
             this.search.Controls.Add(this.searchResults);
-            this.search.Controls.Add(this.textBox1);
+            this.search.Controls.Add(this.searchLastNameTextBox);
             this.search.Controls.Add(this.searchLastNameLabel);
             this.search.Controls.Add(this.searchFirstNametextBox);
             this.search.Controls.Add(this.searchFirstNamelabel);
@@ -136,12 +136,12 @@
             this.searchResults.Size = new System.Drawing.Size(839, 265);
             this.searchResults.TabIndex = 8;
             // 
-            // textBox1
+            // searchLastNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(285, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.searchLastNameTextBox.Location = new System.Drawing.Point(285, 61);
+            this.searchLastNameTextBox.Name = "searchLastNameTextBox";
+            this.searchLastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchLastNameTextBox.TabIndex = 7;
             // 
             // searchLastNameLabel
             // 
@@ -622,7 +622,7 @@
         private System.Windows.Forms.Label deleteFindLabel;
         private System.Windows.Forms.DataGridView deleteDataGridView;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchLastNameTextBox;
         private System.Windows.Forms.Label searchLastNameLabel;
         private System.Windows.Forms.TextBox searchFirstNametextBox;
         private System.Windows.Forms.Label searchFirstNamelabel;
