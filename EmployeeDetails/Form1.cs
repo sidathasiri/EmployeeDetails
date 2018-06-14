@@ -117,9 +117,35 @@ namespace EmployeeDetails
 
         private DataTable loadDataById(String id) {
             DataTable dataTable = new DataTable();
-            String query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id = '{0}'", id);
+            String query;
+            if (id.Length == 0)
+                query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
+            else
+                query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id = '{0}'", id);
             dataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return dataTable;
         }
-    }
+
+        private void updateDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+            updateFirstNameTextBox.Text = updateDataGridView.CurrentRow.Cells[0].Value.ToString();
+            updateLastNameTextBox.Text = updateDataGridView.CurrentRow.Cells[1].Value.ToString();
+            updateAgeTextBox.Text = updateDataGridView.CurrentRow.Cells[2].Value.ToString();
+            if (updateDataGridView.CurrentRow.Cells[3].Value.ToString().Equals("Male"))
+            {
+                updateMaleRadioButton.Checked = true;
+                updateFemaleRadioButton.Checked = false;
+            }
+            else {
+                updateMaleRadioButton.Checked = false;
+                updateFemaleRadioButton.Checked = true;
+            }
+            updateMobileTextBox.Text = updateDataGridView.CurrentRow.Cells[4].Value.ToString();
+            updateEmailTextBox.Text = updateDataGridView.CurrentRow.Cells[5].Value.ToString();
+            updateAdd1TextBox.Text = updateDataGridView.CurrentRow.Cells[6].Value.ToString();
+            updateAdd2TextBox.Text = updateDataGridView.CurrentRow.Cells[7].Value.ToString();
+            updateAdd3TextBox.Text = updateDataGridView.CurrentRow.Cells[8].Value.ToString();
+            updateDeptComboBox.Text = updateDataGridView.CurrentRow.Cells[9].Value.ToString();
+        }
+    }   
 }

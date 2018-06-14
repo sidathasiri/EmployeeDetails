@@ -75,6 +75,25 @@
             this.deleteFindButton = new System.Windows.Forms.Button();
             this.deleteIdtextBox = new System.Windows.Forms.TextBox();
             this.deleteIdLabel = new System.Windows.Forms.Label();
+            this.updateFemaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.updateDeptComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.updateAdd3TextBox = new System.Windows.Forms.TextBox();
+            this.updateAdd2TextBox = new System.Windows.Forms.TextBox();
+            this.updateAdd1TextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.updateEmailTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.updateMobileTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.updateMaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.updateAgeTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.updateLastNameTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.updateFirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
@@ -105,7 +124,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 78);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(907, 450);
+            this.tabControl1.Size = new System.Drawing.Size(907, 510);
             this.tabControl1.TabIndex = 1;
             // 
             // search
@@ -130,9 +149,11 @@
             // 
             // searchResults
             // 
+            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResults.Location = new System.Drawing.Point(28, 139);
             this.searchResults.Name = "searchResults";
+            this.searchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchResults.Size = new System.Drawing.Size(839, 265);
             this.searchResults.TabIndex = 8;
             // 
@@ -232,7 +253,7 @@
             this.insert.Location = new System.Drawing.Point(4, 22);
             this.insert.Name = "insert";
             this.insert.Padding = new System.Windows.Forms.Padding(3);
-            this.insert.Size = new System.Drawing.Size(899, 424);
+            this.insert.Size = new System.Drawing.Size(899, 484);
             this.insert.TabIndex = 1;
             this.insert.Text = "Add Employee";
             this.insert.UseVisualStyleBackColor = true;
@@ -427,6 +448,25 @@
             // 
             // update
             // 
+            this.update.Controls.Add(this.updateFemaleRadioButton);
+            this.update.Controls.Add(this.updateDeptComboBox);
+            this.update.Controls.Add(this.label1);
+            this.update.Controls.Add(this.updateAdd3TextBox);
+            this.update.Controls.Add(this.updateAdd2TextBox);
+            this.update.Controls.Add(this.updateAdd1TextBox);
+            this.update.Controls.Add(this.label2);
+            this.update.Controls.Add(this.updateEmailTextBox);
+            this.update.Controls.Add(this.label3);
+            this.update.Controls.Add(this.updateMobileTextBox);
+            this.update.Controls.Add(this.label4);
+            this.update.Controls.Add(this.updateMaleRadioButton);
+            this.update.Controls.Add(this.label5);
+            this.update.Controls.Add(this.updateAgeTextBox);
+            this.update.Controls.Add(this.label6);
+            this.update.Controls.Add(this.updateLastNameTextBox);
+            this.update.Controls.Add(this.label7);
+            this.update.Controls.Add(this.updateFirstNameTextBox);
+            this.update.Controls.Add(this.label8);
             this.update.Controls.Add(this.updateFindLabel);
             this.update.Controls.Add(this.updateDataGridView);
             this.update.Controls.Add(this.updateIdTextBox);
@@ -434,7 +474,7 @@
             this.update.Controls.Add(this.updateIdlabel);
             this.update.Location = new System.Drawing.Point(4, 22);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(899, 424);
+            this.update.Size = new System.Drawing.Size(899, 484);
             this.update.TabIndex = 2;
             this.update.Text = "Update Details";
             this.update.UseVisualStyleBackColor = true;
@@ -451,11 +491,14 @@
             // 
             // updateDataGridView
             // 
+            this.updateDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.updateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.updateDataGridView.Location = new System.Drawing.Point(30, 88);
             this.updateDataGridView.Name = "updateDataGridView";
-            this.updateDataGridView.Size = new System.Drawing.Size(830, 211);
+            this.updateDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.updateDataGridView.Size = new System.Drawing.Size(830, 120);
             this.updateDataGridView.TabIndex = 3;
+            this.updateDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateDataGridView_MouseClick);
             // 
             // updateIdTextBox
             // 
@@ -550,11 +593,178 @@
             this.deleteIdLabel.TabIndex = 0;
             this.deleteIdLabel.Text = "Employe ID:";
             // 
+            // updateFemaleRadioButton
+            // 
+            this.updateFemaleRadioButton.AutoSize = true;
+            this.updateFemaleRadioButton.Location = new System.Drawing.Point(429, 264);
+            this.updateFemaleRadioButton.Name = "updateFemaleRadioButton";
+            this.updateFemaleRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.updateFemaleRadioButton.TabIndex = 40;
+            this.updateFemaleRadioButton.TabStop = true;
+            this.updateFemaleRadioButton.Text = "Female";
+            this.updateFemaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // updateDeptComboBox
+            // 
+            this.updateDeptComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.updateDeptComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.updateDeptComboBox.FormattingEnabled = true;
+            this.updateDeptComboBox.Items.AddRange(new object[] {
+            "Transport",
+            "Management",
+            "Marketing",
+            "Finance",
+            "Technical",
+            "Sales"});
+            this.updateDeptComboBox.Location = new System.Drawing.Point(366, 342);
+            this.updateDeptComboBox.Name = "updateDeptComboBox";
+            this.updateDeptComboBox.Size = new System.Drawing.Size(121, 21);
+            this.updateDeptComboBox.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(294, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Department:";
+            // 
+            // updateAdd3TextBox
+            // 
+            this.updateAdd3TextBox.Location = new System.Drawing.Point(97, 398);
+            this.updateAdd3TextBox.Name = "updateAdd3TextBox";
+            this.updateAdd3TextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateAdd3TextBox.TabIndex = 37;
+            // 
+            // updateAdd2TextBox
+            // 
+            this.updateAdd2TextBox.Location = new System.Drawing.Point(97, 371);
+            this.updateAdd2TextBox.Name = "updateAdd2TextBox";
+            this.updateAdd2TextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateAdd2TextBox.TabIndex = 36;
+            // 
+            // updateAdd1TextBox
+            // 
+            this.updateAdd1TextBox.Location = new System.Drawing.Point(97, 344);
+            this.updateAdd1TextBox.Name = "updateAdd1TextBox";
+            this.updateAdd1TextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateAdd1TextBox.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 344);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Address";
+            // 
+            // updateEmailTextBox
+            // 
+            this.updateEmailTextBox.Location = new System.Drawing.Point(366, 304);
+            this.updateEmailTextBox.Name = "updateEmailTextBox";
+            this.updateEmailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateEmailTextBox.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(294, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Email:";
+            // 
+            // updateMobileTextBox
+            // 
+            this.updateMobileTextBox.Location = new System.Drawing.Point(97, 298);
+            this.updateMobileTextBox.Name = "updateMobileTextBox";
+            this.updateMobileTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateMobileTextBox.TabIndex = 31;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 298);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Mobile:";
+            // 
+            // updateMaleRadioButton
+            // 
+            this.updateMaleRadioButton.AutoSize = true;
+            this.updateMaleRadioButton.Location = new System.Drawing.Point(366, 264);
+            this.updateMaleRadioButton.Name = "updateMaleRadioButton";
+            this.updateMaleRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.updateMaleRadioButton.TabIndex = 29;
+            this.updateMaleRadioButton.TabStop = true;
+            this.updateMaleRadioButton.Text = "Male";
+            this.updateMaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(294, 264);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Gender:";
+            // 
+            // updateAgeTextBox
+            // 
+            this.updateAgeTextBox.Location = new System.Drawing.Point(97, 261);
+            this.updateAgeTextBox.Name = "updateAgeTextBox";
+            this.updateAgeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateAgeTextBox.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 261);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Age:";
+            // 
+            // updateLastNameTextBox
+            // 
+            this.updateLastNameTextBox.Location = new System.Drawing.Point(366, 232);
+            this.updateLastNameTextBox.Name = "updateLastNameTextBox";
+            this.updateLastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateLastNameTextBox.TabIndex = 25;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(294, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Last Name:";
+            // 
+            // updateFirstNameTextBox
+            // 
+            this.updateFirstNameTextBox.Location = new System.Drawing.Point(97, 226);
+            this.updateFirstNameTextBox.Name = "updateFirstNameTextBox";
+            this.updateFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.updateFirstNameTextBox.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 226);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "First Name:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 543);
+            this.ClientSize = new System.Drawing.Size(931, 601);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -629,6 +839,25 @@
         private System.Windows.Forms.Label searchFirstNamelabel;
         private System.Windows.Forms.DataGridView searchResults;
         private System.Windows.Forms.RadioButton FemaleRadioButton;
+        private System.Windows.Forms.RadioButton updateFemaleRadioButton;
+        private System.Windows.Forms.ComboBox updateDeptComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox updateAdd3TextBox;
+        private System.Windows.Forms.TextBox updateAdd2TextBox;
+        private System.Windows.Forms.TextBox updateAdd1TextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox updateEmailTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox updateMobileTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton updateMaleRadioButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox updateAgeTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox updateLastNameTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox updateFirstNameTextBox;
+        private System.Windows.Forms.Label label8;
     }
 }
 
