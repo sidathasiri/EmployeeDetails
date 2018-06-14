@@ -33,7 +33,7 @@ namespace EmployeeDetails
 
         private DataTable getEmployeeList() {
             DataTable employeeDataTable = new DataTable();
-            String query = "SELECT id, first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
+            String query = "SELECT id as 'ID', first_name as 'First Name', last_name as 'Last Name', age as 'Age', gender as 'Gender', mobile as 'Mobile', email as 'Email', address1 as 'Address1', address2 as 'Address2', address3 as 'Address3', department as 'Departmnt' FROM employees";
             employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
         }
@@ -68,7 +68,7 @@ namespace EmployeeDetails
             if (lName.Length == 0) {
                 lName = "%";
             }
-            String query = String.Format("SELECT id, first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id LIKE '{0}' AND first_name LIKE '{1}' AND last_name LIKE '{2}'", strId, fName, lName);
+            String query = String.Format("SELECT id as 'ID', first_name as 'First Name', last_name as 'Last Name', age as 'Age', gender as 'Gender', mobile as 'Mobile', email as 'Email', address1 as 'Address1', address2 as 'Address2', address3 as 'Address3', department as 'Departmnt' FROM employees WHERE id LIKE '{0}' AND first_name LIKE '{1}' AND last_name LIKE '{2}'", strId, fName, lName);
 
             employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
@@ -134,9 +134,9 @@ namespace EmployeeDetails
             DataTable dataTable = new DataTable();
             String query;
             if (id.Length == 0)
-                query = "SELECT * FROM employees";
+                query = "SELECT id as 'ID', first_name as 'First Name', last_name as 'Last Name', age as 'Age', gender as 'Gender', mobile as 'Mobile', email as 'Email', address1 as 'Address1', address2 as 'Address2', address3 as 'Address3', department as 'Departmnt' FROM employees";
             else
-                query = String.Format("SELECT * FROM employees WHERE id = '{0}'", id);
+                query = String.Format("SELECT id as 'ID', first_name as 'First Name', last_name as 'Last Name', age as 'Age', gender as 'Gender', mobile as 'Mobile', email as 'Email', address1 as 'Address1', address2 as 'Address2', address3 as 'Address3', department as 'Departmnt' FROM employees WHERE id = '{0}'", id);
             dataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return dataTable;
         }

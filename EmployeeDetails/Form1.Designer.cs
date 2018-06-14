@@ -154,6 +154,7 @@
             this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResults.Location = new System.Drawing.Point(28, 139);
             this.searchResults.Name = "searchResults";
+            this.searchResults.ReadOnly = true;
             this.searchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchResults.Size = new System.Drawing.Size(839, 265);
             this.searchResults.TabIndex = 8;
@@ -674,6 +675,7 @@
             this.updateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.updateDataGridView.Location = new System.Drawing.Point(30, 88);
             this.updateDataGridView.Name = "updateDataGridView";
+            this.updateDataGridView.ReadOnly = true;
             this.updateDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.updateDataGridView.Size = new System.Drawing.Size(830, 120);
             this.updateDataGridView.TabIndex = 3;
@@ -746,6 +748,7 @@
             this.deleteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.deleteDataGridView.Location = new System.Drawing.Point(36, 90);
             this.deleteDataGridView.Name = "deleteDataGridView";
+            this.deleteDataGridView.ReadOnly = true;
             this.deleteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.deleteDataGridView.Size = new System.Drawing.Size(828, 104);
             this.deleteDataGridView.TabIndex = 3;
