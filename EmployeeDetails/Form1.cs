@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -94,7 +95,9 @@ namespace EmployeeDetails
             Employee employee = new Employee();
             employee.First_name = firstNameTextBox.Text;
             employee.Last_name = lastNameTextBox.Text;
+           
             employee.Age = Int32.Parse(ageTextBox.Text);
+            
             if (maleRadioButton.Checked)
                 employee.Gender = "Male";
             else
@@ -109,6 +112,32 @@ namespace EmployeeDetails
             employeeService.insertEmployee(employee);
             searchResults.DataSource = getEmployeeList();
             clearForm();
+        }
+
+        public bool emailIsValid(string email)
+        {
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
         }
 
         private void clearForm() {
@@ -207,6 +236,33 @@ namespace EmployeeDetails
             deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
             searchResults.DataSource = getEmployeeList();
             updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
+        }
+
+        private void updateAgeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(updateAgeTextBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                updateAgeTextBox.Text = updateAgeTextBox.Text.Remove(updateAgeTextBox.Text.Length - 1);
+            }
+        }
+
+        private void ageTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(ageTextBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                ageTextBox.Text = ageTextBox.Text.Remove(ageTextBox.Text.Length - 1);
+            }
+        }
+
+        private void mobileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(mobileTextBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                mobileTextBox.Text = mobileTextBox.Text.Remove(mobileTextBox.Text.Length - 1);
+            }
         }
     }   
 }

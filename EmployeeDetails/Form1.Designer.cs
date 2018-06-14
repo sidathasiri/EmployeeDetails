@@ -360,6 +360,7 @@
             this.mobileTextBox.Name = "mobileTextBox";
             this.mobileTextBox.Size = new System.Drawing.Size(100, 20);
             this.mobileTextBox.TabIndex = 11;
+            this.mobileTextBox.TextChanged += new System.EventHandler(this.mobileTextBox_TextChanged);
             // 
             // mobileLabel
             // 
@@ -396,6 +397,7 @@
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(100, 20);
             this.ageTextBox.TabIndex = 6;
+            this.ageTextBox.TextChanged += new System.EventHandler(this.ageTextBox_TextChanged);
             // 
             // ageLabel
             // 
@@ -617,6 +619,7 @@
             this.updateAgeTextBox.Name = "updateAgeTextBox";
             this.updateAgeTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateAgeTextBox.TabIndex = 27;
+            this.updateAgeTextBox.TextChanged += new System.EventHandler(this.updateAgeTextBox_TextChanged);
             // 
             // label6
             // 
