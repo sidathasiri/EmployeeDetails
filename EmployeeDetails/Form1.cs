@@ -33,7 +33,7 @@ namespace EmployeeDetails
 
         private DataTable getEmployeeList() {
             DataTable employeeDataTable = new DataTable();
-            String query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
+            String query = "SELECT id, first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
             employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
         }
@@ -68,7 +68,7 @@ namespace EmployeeDetails
             if (lName.Length == 0) {
                 lName = "%";
             }
-            String query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id LIKE '{0}' AND first_name LIKE '{1}' AND last_name LIKE '{2}'", strId, fName, lName);
+            String query = String.Format("SELECT id, first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id LIKE '{0}' AND first_name LIKE '{1}' AND last_name LIKE '{2}'", strId, fName, lName);
 
             employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
@@ -119,19 +119,19 @@ namespace EmployeeDetails
             DataTable dataTable = new DataTable();
             String query;
             if (id.Length == 0)
-                query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees";
+                query = "SELECT * FROM employees";
             else
-                query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id = '{0}'", id);
+                query = String.Format("SELECT * FROM employees WHERE id = '{0}'", id);
             dataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return dataTable;
         }
 
         private void updateDataGridView_MouseClick(object sender, MouseEventArgs e)
         {
-            updateFirstNameTextBox.Text = updateDataGridView.CurrentRow.Cells[0].Value.ToString();
-            updateLastNameTextBox.Text = updateDataGridView.CurrentRow.Cells[1].Value.ToString();
-            updateAgeTextBox.Text = updateDataGridView.CurrentRow.Cells[2].Value.ToString();
-            if (updateDataGridView.CurrentRow.Cells[3].Value.ToString().Equals("Male"))
+            updateFirstNameTextBox.Text = updateDataGridView.CurrentRow.Cells[1].Value.ToString();
+            updateLastNameTextBox.Text = updateDataGridView.CurrentRow.Cells[2].Value.ToString();
+            updateAgeTextBox.Text = updateDataGridView.CurrentRow.Cells[3].Value.ToString();
+            if (updateDataGridView.CurrentRow.Cells[4].Value.ToString().Equals("Male"))
             {
                 updateMaleRadioButton.Checked = true;
                 updateFemaleRadioButton.Checked = false;
@@ -140,12 +140,39 @@ namespace EmployeeDetails
                 updateMaleRadioButton.Checked = false;
                 updateFemaleRadioButton.Checked = true;
             }
-            updateMobileTextBox.Text = updateDataGridView.CurrentRow.Cells[4].Value.ToString();
-            updateEmailTextBox.Text = updateDataGridView.CurrentRow.Cells[5].Value.ToString();
-            updateAdd1TextBox.Text = updateDataGridView.CurrentRow.Cells[6].Value.ToString();
-            updateAdd2TextBox.Text = updateDataGridView.CurrentRow.Cells[7].Value.ToString();
-            updateAdd3TextBox.Text = updateDataGridView.CurrentRow.Cells[8].Value.ToString();
-            updateDeptComboBox.Text = updateDataGridView.CurrentRow.Cells[9].Value.ToString();
+            updateMobileTextBox.Text = updateDataGridView.CurrentRow.Cells[5].Value.ToString();
+            updateEmailTextBox.Text = updateDataGridView.CurrentRow.Cells[6].Value.ToString();
+            updateAdd1TextBox.Text = updateDataGridView.CurrentRow.Cells[7].Value.ToString();
+            updateAdd2TextBox.Text = updateDataGridView.CurrentRow.Cells[8].Value.ToString();
+            updateAdd3TextBox.Text = updateDataGridView.CurrentRow.Cells[9].Value.ToString();
+            updateDeptComboBox.Text = updateDataGridView.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.Id = Int32.Parse(updateDataGridView.CurrentRow.Cells[0].Value.ToString());
+            employee.First_name = updateFirstNameTextBox.Text;
+            employee.Last_name = updateLastNameTextBox.Text;
+            if (updateAgeTextBox.Text.Length > 0)
+                employee.Age = Int32.Parse(updateAgeTextBox.Text);
+            else
+                employee.Age = null;
+            if (updateMaleRadioButton.Checked)
+                employee.Gender = "Male";
+            else
+                employee.Gender = "Female";
+            employee.Mobile = updateMobileTextBox.Text;
+            employee.Email = updateEmailTextBox.Text;
+            employee.Add1 = updateAdd1TextBox.Text;
+            employee.Add2 = updateAdd2TextBox.Text;
+            employee.Add3 = updateAdd3TextBox.Text;
+            employee.Department = updateDeptComboBox.Text;
+
+            employeeService.updateEmployee(employee);
+            searchResults.DataSource = getEmployeeList();
+            updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
+
         }
     }   
 }

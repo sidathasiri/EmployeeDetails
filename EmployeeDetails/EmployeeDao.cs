@@ -25,7 +25,8 @@ namespace EmployeeDetails
 
         public void updateEmployee(Employee employee)
         {
-            // update emp
+            string query = String.Format("UPDATE employees SET first_name='{0}', last_name='{1}', age='{2}', gender='{3}', mobile='{4}', email='{5}', address1='{6}', address2='{7}', address3='{8}', department='{9}' WHERE id='{10}'", employee.First_name, employee.Last_name, employee.Age, employee.Gender, employee.Mobile, employee.Email, employee.Add1, employee.Add2, employee.Add3, employee.Department, employee.Id);
+            dbConnector.execute(query);
         }
 
         public List<Employee> fetchAllEmployees()

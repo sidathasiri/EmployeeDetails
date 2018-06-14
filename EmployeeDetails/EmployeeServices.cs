@@ -15,8 +15,8 @@ namespace EmployeeDetails
             employeeDao.insertEmployee(employee);
         }
 
-        public void updateEmployee(Employee employee) { 
-            // update emp
+        public void updateEmployee(Employee employee) {
+            employeeDao.updateEmployee(employee);
         }
 
         public List<Employee> fetchAllEmployees()
@@ -30,6 +30,6 @@ namespace EmployeeDetails
 
         public MySqlDataReader getEmployeeDetailsDataReader(String query) {
             return employeeDao.getEmployeeDetailsDataReader(query);
-        } 
+        }
     }
 }

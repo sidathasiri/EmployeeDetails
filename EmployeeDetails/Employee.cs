@@ -27,9 +27,9 @@ namespace EmployeeDetails{
             get { return last_name; }
             set { last_name = value; }
         }
-        private int age;
+        private int? age=null;
 
-        public int Age
+        public int? Age
         {
             get { return age; }
             set { age = value; }

@@ -94,6 +94,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.updateFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
@@ -141,7 +142,7 @@
             this.search.Location = new System.Drawing.Point(4, 22);
             this.search.Name = "search";
             this.search.Padding = new System.Windows.Forms.Padding(3);
-            this.search.Size = new System.Drawing.Size(899, 424);
+            this.search.Size = new System.Drawing.Size(899, 484);
             this.search.TabIndex = 0;
             this.search.Text = "Search Data";
             this.search.UseVisualStyleBackColor = true;
@@ -448,6 +449,7 @@
             // 
             // update
             // 
+            this.update.Controls.Add(this.updateButton);
             this.update.Controls.Add(this.updateFemaleRadioButton);
             this.update.Controls.Add(this.updateDeptComboBox);
             this.update.Controls.Add(this.label1);
@@ -760,6 +762,16 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "First Name:";
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(381, 394);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 41;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,6 +870,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox updateFirstNameTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 
