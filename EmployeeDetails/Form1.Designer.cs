@@ -95,6 +95,11 @@
             this.deleteFindButton = new System.Windows.Forms.Button();
             this.deleteIdtextBox = new System.Windows.Forms.TextBox();
             this.deleteIdLabel = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
@@ -103,12 +108,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.updateDataGridView)).BeginInit();
             this.delete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.title.Location = new System.Drawing.Point(340, 31);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(310, 25);
@@ -130,6 +141,8 @@
             // 
             // search
             // 
+            this.search.BackColor = System.Drawing.Color.Gainsboro;
+            this.search.Controls.Add(this.pictureBox1);
             this.search.Controls.Add(this.searchResults);
             this.search.Controls.Add(this.searchLastNameTextBox);
             this.search.Controls.Add(this.searchLastNameLabel);
@@ -145,7 +158,6 @@
             this.search.Size = new System.Drawing.Size(899, 484);
             this.search.TabIndex = 0;
             this.search.Text = "Search Data";
-            this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
             // searchResults
@@ -204,12 +216,14 @@
             // 
             // searchButton
             // 
+            this.searchButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.searchButton.Location = new System.Drawing.Point(403, 59);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 2;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchIdLabel
@@ -231,6 +245,8 @@
             // 
             // insert
             // 
+            this.insert.BackColor = System.Drawing.Color.Gainsboro;
+            this.insert.Controls.Add(this.pictureBox2);
             this.insert.Controls.Add(this.FemaleRadioButton);
             this.insert.Controls.Add(this.submitButton);
             this.insert.Controls.Add(this.departmntComboBox);
@@ -258,7 +274,6 @@
             this.insert.Size = new System.Drawing.Size(899, 484);
             this.insert.TabIndex = 1;
             this.insert.Text = "Add Employee";
-            this.insert.UseVisualStyleBackColor = true;
             // 
             // FemaleRadioButton
             // 
@@ -273,12 +288,15 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(381, 275);
+            this.submitButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.submitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.submitButton.Location = new System.Drawing.Point(360, 226);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.Size = new System.Drawing.Size(111, 34);
             this.submitButton.TabIndex = 20;
             this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // departmntComboBox
@@ -452,6 +470,8 @@
             // 
             // update
             // 
+            this.update.BackColor = System.Drawing.Color.Gainsboro;
+            this.update.Controls.Add(this.pictureBox3);
             this.update.Controls.Add(this.updateButton);
             this.update.Controls.Add(this.updateFemaleRadioButton);
             this.update.Controls.Add(this.updateDeptComboBox);
@@ -482,22 +502,22 @@
             this.update.Size = new System.Drawing.Size(899, 484);
             this.update.TabIndex = 2;
             this.update.Text = "Update Details";
-            this.update.UseVisualStyleBackColor = true;
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(381, 394);
+            this.updateButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.updateButton.Location = new System.Drawing.Point(381, 429);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.Size = new System.Drawing.Size(97, 32);
             this.updateButton.TabIndex = 41;
             this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.UseVisualStyleBackColor = false;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // updateFemaleRadioButton
             // 
             this.updateFemaleRadioButton.AutoSize = true;
-            this.updateFemaleRadioButton.Location = new System.Drawing.Point(429, 264);
+            this.updateFemaleRadioButton.Location = new System.Drawing.Point(429, 299);
             this.updateFemaleRadioButton.Name = "updateFemaleRadioButton";
             this.updateFemaleRadioButton.Size = new System.Drawing.Size(59, 17);
             this.updateFemaleRadioButton.TabIndex = 40;
@@ -517,7 +537,7 @@
             "Finance",
             "Technical",
             "Sales"});
-            this.updateDeptComboBox.Location = new System.Drawing.Point(366, 342);
+            this.updateDeptComboBox.Location = new System.Drawing.Point(366, 377);
             this.updateDeptComboBox.Name = "updateDeptComboBox";
             this.updateDeptComboBox.Size = new System.Drawing.Size(121, 21);
             this.updateDeptComboBox.TabIndex = 39;
@@ -525,7 +545,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 347);
+            this.label1.Location = new System.Drawing.Point(294, 382);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 38;
@@ -533,21 +553,21 @@
             // 
             // updateAdd3TextBox
             // 
-            this.updateAdd3TextBox.Location = new System.Drawing.Point(97, 398);
+            this.updateAdd3TextBox.Location = new System.Drawing.Point(97, 433);
             this.updateAdd3TextBox.Name = "updateAdd3TextBox";
             this.updateAdd3TextBox.Size = new System.Drawing.Size(100, 20);
             this.updateAdd3TextBox.TabIndex = 37;
             // 
             // updateAdd2TextBox
             // 
-            this.updateAdd2TextBox.Location = new System.Drawing.Point(97, 371);
+            this.updateAdd2TextBox.Location = new System.Drawing.Point(97, 406);
             this.updateAdd2TextBox.Name = "updateAdd2TextBox";
             this.updateAdd2TextBox.Size = new System.Drawing.Size(100, 20);
             this.updateAdd2TextBox.TabIndex = 36;
             // 
             // updateAdd1TextBox
             // 
-            this.updateAdd1TextBox.Location = new System.Drawing.Point(97, 344);
+            this.updateAdd1TextBox.Location = new System.Drawing.Point(97, 379);
             this.updateAdd1TextBox.Name = "updateAdd1TextBox";
             this.updateAdd1TextBox.Size = new System.Drawing.Size(100, 20);
             this.updateAdd1TextBox.TabIndex = 35;
@@ -555,7 +575,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 344);
+            this.label2.Location = new System.Drawing.Point(39, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 34;
@@ -563,7 +583,7 @@
             // 
             // updateEmailTextBox
             // 
-            this.updateEmailTextBox.Location = new System.Drawing.Point(366, 304);
+            this.updateEmailTextBox.Location = new System.Drawing.Point(366, 339);
             this.updateEmailTextBox.Name = "updateEmailTextBox";
             this.updateEmailTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateEmailTextBox.TabIndex = 33;
@@ -571,7 +591,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 304);
+            this.label3.Location = new System.Drawing.Point(294, 339);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 32;
@@ -579,7 +599,7 @@
             // 
             // updateMobileTextBox
             // 
-            this.updateMobileTextBox.Location = new System.Drawing.Point(97, 298);
+            this.updateMobileTextBox.Location = new System.Drawing.Point(97, 333);
             this.updateMobileTextBox.Name = "updateMobileTextBox";
             this.updateMobileTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateMobileTextBox.TabIndex = 31;
@@ -588,7 +608,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 298);
+            this.label4.Location = new System.Drawing.Point(36, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 30;
@@ -597,7 +617,7 @@
             // updateMaleRadioButton
             // 
             this.updateMaleRadioButton.AutoSize = true;
-            this.updateMaleRadioButton.Location = new System.Drawing.Point(366, 264);
+            this.updateMaleRadioButton.Location = new System.Drawing.Point(366, 299);
             this.updateMaleRadioButton.Name = "updateMaleRadioButton";
             this.updateMaleRadioButton.Size = new System.Drawing.Size(48, 17);
             this.updateMaleRadioButton.TabIndex = 29;
@@ -608,7 +628,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 264);
+            this.label5.Location = new System.Drawing.Point(294, 299);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 28;
@@ -616,7 +636,7 @@
             // 
             // updateAgeTextBox
             // 
-            this.updateAgeTextBox.Location = new System.Drawing.Point(97, 261);
+            this.updateAgeTextBox.Location = new System.Drawing.Point(97, 296);
             this.updateAgeTextBox.Name = "updateAgeTextBox";
             this.updateAgeTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateAgeTextBox.TabIndex = 27;
@@ -625,7 +645,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 261);
+            this.label6.Location = new System.Drawing.Point(33, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 26;
@@ -633,7 +653,7 @@
             // 
             // updateLastNameTextBox
             // 
-            this.updateLastNameTextBox.Location = new System.Drawing.Point(366, 232);
+            this.updateLastNameTextBox.Location = new System.Drawing.Point(366, 267);
             this.updateLastNameTextBox.Name = "updateLastNameTextBox";
             this.updateLastNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateLastNameTextBox.TabIndex = 25;
@@ -641,7 +661,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(294, 232);
+            this.label7.Location = new System.Drawing.Point(294, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 24;
@@ -649,7 +669,7 @@
             // 
             // updateFirstNameTextBox
             // 
-            this.updateFirstNameTextBox.Location = new System.Drawing.Point(97, 226);
+            this.updateFirstNameTextBox.Location = new System.Drawing.Point(97, 261);
             this.updateFirstNameTextBox.Name = "updateFirstNameTextBox";
             this.updateFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateFirstNameTextBox.TabIndex = 23;
@@ -657,7 +677,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 226);
+            this.label8.Location = new System.Drawing.Point(30, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 22;
@@ -667,17 +687,17 @@
             // 
             this.updateFindLabel.AutoSize = true;
             this.updateFindLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateFindLabel.Location = new System.Drawing.Point(30, 63);
+            this.updateFindLabel.Location = new System.Drawing.Point(30, 95);
             this.updateFindLabel.Name = "updateFindLabel";
-            this.updateFindLabel.Size = new System.Drawing.Size(77, 13);
+            this.updateFindLabel.Size = new System.Drawing.Size(49, 13);
             this.updateFindLabel.TabIndex = 4;
-            this.updateFindLabel.Text = "Find Results";
+            this.updateFindLabel.Text = "Results";
             // 
             // updateDataGridView
             // 
             this.updateDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.updateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.updateDataGridView.Location = new System.Drawing.Point(30, 88);
+            this.updateDataGridView.Location = new System.Drawing.Point(30, 122);
             this.updateDataGridView.Name = "updateDataGridView";
             this.updateDataGridView.ReadOnly = true;
             this.updateDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -687,25 +707,26 @@
             // 
             // updateIdTextBox
             // 
-            this.updateIdTextBox.Location = new System.Drawing.Point(104, 25);
+            this.updateIdTextBox.Location = new System.Drawing.Point(104, 60);
             this.updateIdTextBox.Name = "updateIdTextBox";
             this.updateIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateIdTextBox.TabIndex = 2;
             // 
             // updateFindButton
             // 
-            this.updateFindButton.Location = new System.Drawing.Point(219, 25);
+            this.updateFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.updateFindButton.Location = new System.Drawing.Point(219, 58);
             this.updateFindButton.Name = "updateFindButton";
             this.updateFindButton.Size = new System.Drawing.Size(75, 23);
             this.updateFindButton.TabIndex = 1;
-            this.updateFindButton.Text = "Find";
-            this.updateFindButton.UseVisualStyleBackColor = true;
+            this.updateFindButton.Text = "Search";
+            this.updateFindButton.UseVisualStyleBackColor = false;
             this.updateFindButton.Click += new System.EventHandler(this.updateFindButton_Click);
             // 
             // updateIdlabel
             // 
             this.updateIdlabel.AutoSize = true;
-            this.updateIdlabel.Location = new System.Drawing.Point(27, 25);
+            this.updateIdlabel.Location = new System.Drawing.Point(27, 62);
             this.updateIdlabel.Name = "updateIdlabel";
             this.updateIdlabel.Size = new System.Drawing.Size(70, 13);
             this.updateIdlabel.TabIndex = 0;
@@ -713,6 +734,8 @@
             // 
             // delete
             // 
+            this.delete.BackColor = System.Drawing.Color.Gainsboro;
+            this.delete.Controls.Add(this.pictureBox4);
             this.delete.Controls.Add(this.deleteButton);
             this.delete.Controls.Add(this.deleteFindLabel);
             this.delete.Controls.Add(this.deleteDataGridView);
@@ -724,33 +747,33 @@
             this.delete.Size = new System.Drawing.Size(899, 484);
             this.delete.TabIndex = 3;
             this.delete.Text = "Delete Employee";
-            this.delete.UseVisualStyleBackColor = true;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(789, 389);
+            this.deleteButton.BackColor = System.Drawing.Color.Red;
+            this.deleteButton.Location = new System.Drawing.Point(761, 430);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(103, 34);
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click_1);
             // 
             // deleteFindLabel
             // 
             this.deleteFindLabel.AutoSize = true;
             this.deleteFindLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteFindLabel.Location = new System.Drawing.Point(36, 64);
+            this.deleteFindLabel.Location = new System.Drawing.Point(36, 105);
             this.deleteFindLabel.Name = "deleteFindLabel";
-            this.deleteFindLabel.Size = new System.Drawing.Size(77, 13);
+            this.deleteFindLabel.Size = new System.Drawing.Size(49, 13);
             this.deleteFindLabel.TabIndex = 4;
-            this.deleteFindLabel.Text = "Find Results";
+            this.deleteFindLabel.Text = "Results";
             // 
             // deleteDataGridView
             // 
             this.deleteDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deleteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deleteDataGridView.Location = new System.Drawing.Point(36, 90);
+            this.deleteDataGridView.Location = new System.Drawing.Point(36, 131);
             this.deleteDataGridView.Name = "deleteDataGridView";
             this.deleteDataGridView.ReadOnly = true;
             this.deleteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -760,17 +783,18 @@
             // 
             // deleteFindButton
             // 
-            this.deleteFindButton.Location = new System.Drawing.Point(236, 21);
+            this.deleteFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.deleteFindButton.Location = new System.Drawing.Point(238, 69);
             this.deleteFindButton.Name = "deleteFindButton";
             this.deleteFindButton.Size = new System.Drawing.Size(75, 23);
             this.deleteFindButton.TabIndex = 2;
-            this.deleteFindButton.Text = "Find";
-            this.deleteFindButton.UseVisualStyleBackColor = true;
+            this.deleteFindButton.Text = "Search";
+            this.deleteFindButton.UseVisualStyleBackColor = false;
             this.deleteFindButton.Click += new System.EventHandler(this.deleteFindButton_Click);
             // 
             // deleteIdtextBox
             // 
-            this.deleteIdtextBox.Location = new System.Drawing.Point(104, 22);
+            this.deleteIdtextBox.Location = new System.Drawing.Point(106, 70);
             this.deleteIdtextBox.Name = "deleteIdtextBox";
             this.deleteIdtextBox.Size = new System.Drawing.Size(100, 20);
             this.deleteIdtextBox.TabIndex = 1;
@@ -778,19 +802,67 @@
             // deleteIdLabel
             // 
             this.deleteIdLabel.AutoSize = true;
-            this.deleteIdLabel.Location = new System.Drawing.Point(33, 25);
+            this.deleteIdLabel.Location = new System.Drawing.Point(35, 73);
             this.deleteIdLabel.Name = "deleteIdLabel";
             this.deleteIdLabel.Size = new System.Drawing.Size(64, 13);
             this.deleteIdLabel.TabIndex = 0;
             this.deleteIdLabel.Text = "Employe ID:";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::EmployeeDetails.Properties.Resources.add_big;
+            this.pictureBox5.Location = new System.Drawing.Point(783, -2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EmployeeDetails.Properties.Resources.search_big;
+            this.pictureBox1.Location = new System.Drawing.Point(649, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 127);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::EmployeeDetails.Properties.Resources.employee;
+            this.pictureBox2.Location = new System.Drawing.Point(652, 29);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(128, 137);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::EmployeeDetails.Properties.Resources.edit_big;
+            this.pictureBox3.Location = new System.Drawing.Point(660, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(131, 113);
+            this.pictureBox3.TabIndex = 42;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::EmployeeDetails.Properties.Resources.delete_big;
+            this.pictureBox4.Location = new System.Drawing.Point(687, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(131, 125);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(931, 601);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.title);
+            this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -809,6 +881,11 @@
             this.delete.ResumeLayout(false);
             this.delete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -883,6 +960,11 @@
         private System.Windows.Forms.TextBox updateFirstNameTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
