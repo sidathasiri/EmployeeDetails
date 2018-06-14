@@ -454,7 +454,7 @@
             this.updateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.updateDataGridView.Location = new System.Drawing.Point(30, 88);
             this.updateDataGridView.Name = "updateDataGridView";
-            this.updateDataGridView.Size = new System.Drawing.Size(830, 111);
+            this.updateDataGridView.Size = new System.Drawing.Size(830, 211);
             this.updateDataGridView.TabIndex = 3;
             // 
             // updateIdTextBox
@@ -472,6 +472,7 @@
             this.updateFindButton.TabIndex = 1;
             this.updateFindButton.Text = "Find";
             this.updateFindButton.UseVisualStyleBackColor = true;
+            this.updateFindButton.Click += new System.EventHandler(this.updateFindButton_Click);
             // 
             // updateIdlabel
             // 

@@ -109,5 +109,17 @@ namespace EmployeeDetails
             employeeService.insertEmployee(employee);
             searchResults.DataSource = getEmployeeList();
         }
+
+        private void updateFindButton_Click(object sender, EventArgs e)
+        {
+            updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
+        }
+
+        private DataTable loadDataById(String id) {
+            DataTable dataTable = new DataTable();
+            String query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id = '{0}'", id);
+            dataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
+            return dataTable;
+        }
     }
 }
