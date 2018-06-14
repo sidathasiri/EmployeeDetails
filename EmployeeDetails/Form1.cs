@@ -95,23 +95,29 @@ namespace EmployeeDetails
             Employee employee = new Employee();
             employee.First_name = firstNameTextBox.Text;
             employee.Last_name = lastNameTextBox.Text;
-           
-            employee.Age = Int32.Parse(ageTextBox.Text);
+            
+            if(ageTextBox.Text.Length>0)
+                employee.Age = Int32.Parse(ageTextBox.Text);
             
             if (maleRadioButton.Checked)
                 employee.Gender = "Male";
             else
                 employee.Gender = "Female";
             employee.Mobile = mobileTextBox.Text;
-            employee.Email = emailTextBox.Text;
+            if(emailIsValid(emailTextBox.Text))
+                employee.Email = emailTextBox.Text;
+            else
+                MessageBox.Show("Email is not valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             employee.Add1 = addressLine1.Text;
             employee.Add2 = addressLine2.Text;
             employee.Add3 = addressLine3.Text;
             employee.Department = departmntComboBox.Text;
 
-            employeeService.insertEmployee(employee);
-            searchResults.DataSource = getEmployeeList();
-            clearForm();
+            if (emailIsValid(emailTextBox.Text)) {
+                employeeService.insertEmployee(employee);
+                searchResults.DataSource = getEmployeeList();
+                clearForm();
+            }
         }
 
         public bool emailIsValid(string email)
@@ -242,7 +248,7 @@ namespace EmployeeDetails
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(updateAgeTextBox.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 updateAgeTextBox.Text = updateAgeTextBox.Text.Remove(updateAgeTextBox.Text.Length - 1);
             }
         }
@@ -251,7 +257,7 @@ namespace EmployeeDetails
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(ageTextBox.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ageTextBox.Text = ageTextBox.Text.Remove(ageTextBox.Text.Length - 1);
             }
         }
@@ -260,7 +266,7 @@ namespace EmployeeDetails
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(mobileTextBox.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mobileTextBox.Text = mobileTextBox.Text.Remove(mobileTextBox.Text.Length - 1);
             }
         }
