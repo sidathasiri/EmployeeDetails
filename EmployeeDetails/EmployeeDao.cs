@@ -64,9 +64,10 @@ namespace EmployeeDetails
             return cmd.ExecuteReader();
         }
 
-        public void deleteEmployee(Employee employee)
+        public void deleteEmployee(int id)
         {
-            //delete emp
+            string query = String.Format("DELETE FROM employees WHERE id = '{0}'", id);
+            dbConnector.execute(query);
         }
     }
 }

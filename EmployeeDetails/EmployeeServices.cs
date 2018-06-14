@@ -24,8 +24,8 @@ namespace EmployeeDetails
             return employeeDao.fetchAllEmployees();
         }
 
-        public void deleteEmployee(Employee employee) { 
-            //delete emp
+        public void deleteEmployee(int id) {
+            employeeDao.deleteEmployee(id);
         }
 
         public MySqlDataReader getEmployeeDetailsDataReader(String query) {

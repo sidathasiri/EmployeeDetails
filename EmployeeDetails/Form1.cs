@@ -108,6 +108,21 @@ namespace EmployeeDetails
 
             employeeService.insertEmployee(employee);
             searchResults.DataSource = getEmployeeList();
+            clearForm();
+        }
+
+        private void clearForm() {
+            firstNameTextBox.Text = "";
+            lastNameTextBox.Text = "";
+            ageTextBox.Text = "";
+            maleRadioButton.Checked = true;
+            FemaleRadioButton.Checked = false;
+            mobileTextBox.Text = "";
+            emailTextBox.Text = "";
+            addressLine1.Text = "";
+            addressLine2.Text = "";
+            addressLine3.Text = "";
+            departmntComboBox.Text = "";
         }
 
         private void updateFindButton_Click(object sender, EventArgs e)
@@ -172,7 +187,26 @@ namespace EmployeeDetails
             employeeService.updateEmployee(employee);
             searchResults.DataSource = getEmployeeList();
             updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
+            deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
 
+        }
+
+        private void deleteFindButton_Click(object sender, EventArgs e)
+        {
+            deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
+        }
+
+        private void deleteDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+              
+        }
+
+        private void deleteButton_Click_1(object sender, EventArgs e)
+        {
+            employeeService.deleteEmployee(Int32.Parse(deleteDataGridView.CurrentRow.Cells[0].Value.ToString()));
+            deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
+            searchResults.DataSource = getEmployeeList();
+            updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
         }
     }   
 }
