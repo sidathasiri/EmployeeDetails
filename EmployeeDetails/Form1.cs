@@ -228,10 +228,20 @@ namespace EmployeeDetails
             employee.Add3 = updateAdd3TextBox.Text;
             employee.Department = updateDeptComboBox.Text;
 
-            employeeService.updateEmployee(employee);
-            searchResults.DataSource = getEmployeeList();
-            updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
-            deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
+            if (updateFirstNameTextBox.Text.Length == 0 || updateLastNameTextBox.Text.Length == 0)
+                MessageBox.Show("Enter first name and last name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else {
+                if (emailIsValid(updateEmailTextBox.Text))
+                {
+                    employeeService.updateEmployee(employee);
+                    searchResults.DataSource = getEmployeeList();
+                    updateDataGridView.DataSource = loadDataById(updateIdTextBox.Text);
+                    deleteDataGridView.DataSource = loadDataById(deleteIdtextBox.Text);
+                }
+                else {
+                    MessageBox.Show("Email is not valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 
@@ -277,6 +287,15 @@ namespace EmployeeDetails
             {
                 MessageBox.Show("Please enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mobileTextBox.Text = mobileTextBox.Text.Remove(mobileTextBox.Text.Length - 1);
+            }
+        }
+
+        private void updateMobileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(updateMobileTextBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                updateMobileTextBox.Text = updateMobileTextBox.Text.Remove(updateMobileTextBox.Text.Length - 1);
             }
         }
     }   

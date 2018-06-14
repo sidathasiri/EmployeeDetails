@@ -583,6 +583,7 @@
             this.updateMobileTextBox.Name = "updateMobileTextBox";
             this.updateMobileTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateMobileTextBox.TabIndex = 31;
+            this.updateMobileTextBox.TextChanged += new System.EventHandler(this.updateMobileTextBox_TextChanged);
             // 
             // label4
             // 
