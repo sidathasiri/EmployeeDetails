@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,12 +19,17 @@ namespace EmployeeDetails
             // update emp
         }
 
-        public void fetchEmployee(Employee employee) { 
-            //fetch emp
+        public List<Employee> fetchAllEmployees()
+        {
+            return employeeDao.fetchAllEmployees();
         }
 
         public void deleteEmployee(Employee employee) { 
             //delete emp
         }
+
+        public MySqlDataReader getEmployeeDetailsDataReader() {
+            return employeeDao.getEmployeeDetailsDataReader();
+        } 
     }
 }

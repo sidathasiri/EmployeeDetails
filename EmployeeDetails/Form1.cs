@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace EmployeeDetails
         {
             InitializeComponent();
             maleRadioButton.Checked = true;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -26,7 +28,13 @@ namespace EmployeeDetails
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            searchResults.DataSource = getEmployeeList();
+        }
 
+        private DataTable getEmployeeList() {
+            DataTable employeeDataTable = new DataTable();
+            employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader());
+            return employeeDataTable;
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -41,7 +49,7 @@ namespace EmployeeDetails
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(searchIdTextBox.Text);
+            employeeService.fetchAllEmployees();
         }
 
         private void label1_Click_2(object sender, EventArgs e)

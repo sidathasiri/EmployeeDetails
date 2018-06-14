@@ -31,7 +31,7 @@
             this.title = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.search = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.searchResults = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchLastNameLabel = new System.Windows.Forms.Label();
             this.searchFirstNametextBox = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.searchIdLabel = new System.Windows.Forms.Label();
             this.searchIdTextBox = new System.Windows.Forms.TextBox();
             this.insert = new System.Windows.Forms.TabPage();
+            this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
             this.submitButton = new System.Windows.Forms.Button();
             this.departmntComboBox = new System.Windows.Forms.ComboBox();
             this.departmentLabel = new System.Windows.Forms.Label();
@@ -74,10 +75,9 @@
             this.deleteFindButton = new System.Windows.Forms.Button();
             this.deleteIdtextBox = new System.Windows.Forms.TextBox();
             this.deleteIdLabel = new System.Windows.Forms.Label();
-            this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
             this.insert.SuspendLayout();
             this.update.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updateDataGridView)).BeginInit();
@@ -110,7 +110,7 @@
             // 
             // search
             // 
-            this.search.Controls.Add(this.dataGridView1);
+            this.search.Controls.Add(this.searchResults);
             this.search.Controls.Add(this.textBox1);
             this.search.Controls.Add(this.searchLastNameLabel);
             this.search.Controls.Add(this.searchFirstNametextBox);
@@ -128,13 +128,13 @@
             this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
-            // dataGridView1
+            // searchResults
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 139);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(839, 265);
-            this.dataGridView1.TabIndex = 8;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Location = new System.Drawing.Point(28, 139);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.Size = new System.Drawing.Size(839, 265);
+            this.searchResults.TabIndex = 8;
             // 
             // textBox1
             // 
@@ -236,6 +236,17 @@
             this.insert.TabIndex = 1;
             this.insert.Text = "Add Employee";
             this.insert.UseVisualStyleBackColor = true;
+            // 
+            // FemaleRadioButton
+            // 
+            this.FemaleRadioButton.AutoSize = true;
+            this.FemaleRadioButton.Location = new System.Drawing.Point(423, 92);
+            this.FemaleRadioButton.Name = "FemaleRadioButton";
+            this.FemaleRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.FemaleRadioButton.TabIndex = 21;
+            this.FemaleRadioButton.TabStop = true;
+            this.FemaleRadioButton.Text = "Female";
+            this.FemaleRadioButton.UseVisualStyleBackColor = true;
             // 
             // submitButton
             // 
@@ -538,17 +549,6 @@
             this.deleteIdLabel.TabIndex = 0;
             this.deleteIdLabel.Text = "Employe ID:";
             // 
-            // FemaleRadioButton
-            // 
-            this.FemaleRadioButton.AutoSize = true;
-            this.FemaleRadioButton.Location = new System.Drawing.Point(423, 92);
-            this.FemaleRadioButton.Name = "FemaleRadioButton";
-            this.FemaleRadioButton.Size = new System.Drawing.Size(59, 17);
-            this.FemaleRadioButton.TabIndex = 21;
-            this.FemaleRadioButton.TabStop = true;
-            this.FemaleRadioButton.Text = "Female";
-            this.FemaleRadioButton.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,13 +556,16 @@
             this.ClientSize = new System.Drawing.Size(931, 543);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Employee Data";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.search.ResumeLayout(false);
             this.search.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
             this.insert.ResumeLayout(false);
             this.insert.PerformLayout();
             this.update.ResumeLayout(false);
@@ -623,7 +626,7 @@
         private System.Windows.Forms.Label searchLastNameLabel;
         private System.Windows.Forms.TextBox searchFirstNametextBox;
         private System.Windows.Forms.Label searchFirstNamelabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView searchResults;
         private System.Windows.Forms.RadioButton FemaleRadioButton;
     }
 }

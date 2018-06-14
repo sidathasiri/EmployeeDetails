@@ -28,9 +28,40 @@ namespace EmployeeDetails
             // update emp
         }
 
-        public void fetchEmployee(Employee employee)
+        public List<Employee> fetchAllEmployees()
         {
-            //fetch emp
+            List<Employee> employeeList = new List<Employee>();
+            string query = "SELECT * FROM employees";
+            MySqlConnection conn = dbConnector.getConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read()) {
+                Employee emp = new Employee();
+                emp.First_name = (string)dataReader["first_name"];
+                emp.Last_name = (string)dataReader["last_name"];
+                emp.Age = (int)dataReader["age"];
+                emp.Gender = (string)dataReader["gender"];
+                emp.Mobile = (string)dataReader["mobile"];
+                emp.Email = (string)dataReader["email"];
+                emp.Add1 = (string)dataReader["address1"];
+                emp.Add2 = (string)dataReader["address2"];
+                emp.Add3 = (string)dataReader["address3"];
+                emp.Department = (string)dataReader["department"];
+                employeeList.Add(emp);
+            }
+            conn.Close();
+
+            return employeeList;
+
+        }
+
+        public MySqlDataReader getEmployeeDetailsDataReader() {
+            string query = "SELECT * FROM employees";
+            MySqlConnection conn = dbConnector.getConnection();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            return cmd.ExecuteReader();
         }
 
         public void deleteEmployee(Employee employee)
