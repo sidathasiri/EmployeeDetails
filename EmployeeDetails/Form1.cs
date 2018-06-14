@@ -104,24 +104,33 @@ namespace EmployeeDetails
             else
                 employee.Gender = "Female";
             employee.Mobile = mobileTextBox.Text;
-            if(emailIsValid(emailTextBox.Text))
-                employee.Email = emailTextBox.Text;
-            else
-                MessageBox.Show("Email is not valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            employee.Email = emailTextBox.Text;
             employee.Add1 = addressLine1.Text;
             employee.Add2 = addressLine2.Text;
             employee.Add3 = addressLine3.Text;
             employee.Department = departmntComboBox.Text;
 
-            if (emailIsValid(emailTextBox.Text)) {
-                employeeService.insertEmployee(employee);
-                searchResults.DataSource = getEmployeeList();
-                clearForm();
+            if (firstNameTextBox.Text.Length == 0 || lastNameTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Enter first name and last name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (emailIsValid(emailTextBox.Text))
+                {
+                    employeeService.insertEmployee(employee);
+                    searchResults.DataSource = getEmployeeList();
+                    clearForm();
+                }
+                else
+                    MessageBox.Show("Email is not valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public bool emailIsValid(string email)
         {
+            if (email.Length == 0)
+                return true;
             string expresion;
             expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             if (Regex.IsMatch(email, expresion))

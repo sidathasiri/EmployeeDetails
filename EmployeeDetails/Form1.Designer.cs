@@ -727,7 +727,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(791, 216);
+            this.deleteButton.Location = new System.Drawing.Point(789, 389);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 5;
@@ -753,7 +753,7 @@
             this.deleteDataGridView.Name = "deleteDataGridView";
             this.deleteDataGridView.ReadOnly = true;
             this.deleteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.deleteDataGridView.Size = new System.Drawing.Size(828, 104);
+            this.deleteDataGridView.Size = new System.Drawing.Size(828, 285);
             this.deleteDataGridView.TabIndex = 3;
             this.deleteDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.deleteDataGridView_MouseClick);
             // 
