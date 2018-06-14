@@ -37,12 +37,10 @@
             this.searchFirstNametextBox = new System.Windows.Forms.TextBox();
             this.searchFirstNamelabel = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
             this.searchIdLabel = new System.Windows.Forms.Label();
             this.searchIdTextBox = new System.Windows.Forms.TextBox();
             this.insert = new System.Windows.Forms.TabPage();
             this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.submitButton = new System.Windows.Forms.Button();
             this.departmntComboBox = new System.Windows.Forms.ComboBox();
             this.departmentLabel = new System.Windows.Forms.Label();
             this.addressLine3 = new System.Windows.Forms.TextBox();
@@ -63,7 +61,6 @@
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.enterDetailsLabel = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.TabPage();
-            this.updateButton = new System.Windows.Forms.Button();
             this.updateFemaleRadioButton = new System.Windows.Forms.RadioButton();
             this.updateDeptComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -86,20 +83,23 @@
             this.updateFindLabel = new System.Windows.Forms.Label();
             this.updateDataGridView = new System.Windows.Forms.DataGridView();
             this.updateIdTextBox = new System.Windows.Forms.TextBox();
-            this.updateFindButton = new System.Windows.Forms.Button();
             this.updateIdlabel = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.TabPage();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.deleteFindLabel = new System.Windows.Forms.Label();
             this.deleteDataGridView = new System.Windows.Forms.DataGridView();
-            this.deleteFindButton = new System.Windows.Forms.Button();
             this.deleteIdtextBox = new System.Windows.Forms.TextBox();
             this.deleteIdLabel = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.submitButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.updateFindButton = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.deleteFindButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
@@ -214,18 +214,6 @@
             this.resultLabel.TabIndex = 3;
             this.resultLabel.Text = "Results";
             // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.searchButton.Location = new System.Drawing.Point(403, 59);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
             // searchIdLabel
             // 
             this.searchIdLabel.AutoSize = true;
@@ -248,7 +236,6 @@
             this.insert.BackColor = System.Drawing.Color.Gainsboro;
             this.insert.Controls.Add(this.pictureBox2);
             this.insert.Controls.Add(this.FemaleRadioButton);
-            this.insert.Controls.Add(this.submitButton);
             this.insert.Controls.Add(this.departmntComboBox);
             this.insert.Controls.Add(this.departmentLabel);
             this.insert.Controls.Add(this.addressLine3);
@@ -268,6 +255,7 @@
             this.insert.Controls.Add(this.firstNameTextBox);
             this.insert.Controls.Add(this.firstNameLabel);
             this.insert.Controls.Add(this.enterDetailsLabel);
+            this.insert.Controls.Add(this.submitButton);
             this.insert.Location = new System.Drawing.Point(4, 22);
             this.insert.Name = "insert";
             this.insert.Padding = new System.Windows.Forms.Padding(3);
@@ -285,19 +273,6 @@
             this.FemaleRadioButton.TabStop = true;
             this.FemaleRadioButton.Text = "Female";
             this.FemaleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // submitButton
-            // 
-            this.submitButton.BackColor = System.Drawing.Color.LimeGreen;
-            this.submitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.submitButton.Location = new System.Drawing.Point(360, 226);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(111, 34);
-            this.submitButton.TabIndex = 20;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = false;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // departmntComboBox
             // 
@@ -495,24 +470,13 @@
             this.update.Controls.Add(this.updateFindLabel);
             this.update.Controls.Add(this.updateDataGridView);
             this.update.Controls.Add(this.updateIdTextBox);
-            this.update.Controls.Add(this.updateFindButton);
             this.update.Controls.Add(this.updateIdlabel);
+            this.update.Controls.Add(this.updateFindButton);
             this.update.Location = new System.Drawing.Point(4, 22);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(899, 484);
             this.update.TabIndex = 2;
             this.update.Text = "Update Details";
-            // 
-            // updateButton
-            // 
-            this.updateButton.BackColor = System.Drawing.Color.LimeGreen;
-            this.updateButton.Location = new System.Drawing.Point(381, 429);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(97, 32);
-            this.updateButton.TabIndex = 41;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = false;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // updateFemaleRadioButton
             // 
@@ -712,17 +676,6 @@
             this.updateIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.updateIdTextBox.TabIndex = 2;
             // 
-            // updateFindButton
-            // 
-            this.updateFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.updateFindButton.Location = new System.Drawing.Point(219, 58);
-            this.updateFindButton.Name = "updateFindButton";
-            this.updateFindButton.Size = new System.Drawing.Size(75, 23);
-            this.updateFindButton.TabIndex = 1;
-            this.updateFindButton.Text = "Search";
-            this.updateFindButton.UseVisualStyleBackColor = false;
-            this.updateFindButton.Click += new System.EventHandler(this.updateFindButton_Click);
-            // 
             // updateIdlabel
             // 
             this.updateIdlabel.AutoSize = true;
@@ -748,17 +701,6 @@
             this.delete.TabIndex = 3;
             this.delete.Text = "Delete Employee";
             // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.Red;
-            this.deleteButton.Location = new System.Drawing.Point(761, 430);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(103, 34);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click_1);
-            // 
             // deleteFindLabel
             // 
             this.deleteFindLabel.AutoSize = true;
@@ -780,17 +722,6 @@
             this.deleteDataGridView.Size = new System.Drawing.Size(828, 285);
             this.deleteDataGridView.TabIndex = 3;
             this.deleteDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.deleteDataGridView_MouseClick);
-            // 
-            // deleteFindButton
-            // 
-            this.deleteFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.deleteFindButton.Location = new System.Drawing.Point(238, 69);
-            this.deleteFindButton.Name = "deleteFindButton";
-            this.deleteFindButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteFindButton.TabIndex = 2;
-            this.deleteFindButton.Text = "Search";
-            this.deleteFindButton.UseVisualStyleBackColor = false;
-            this.deleteFindButton.Click += new System.EventHandler(this.deleteFindButton_Click);
             // 
             // deleteIdtextBox
             // 
@@ -826,6 +757,20 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.searchButton.Image = global::EmployeeDetails.Properties.Resources.search;
+            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchButton.Location = new System.Drawing.Point(401, 53);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(79, 33);
+            this.searchButton.TabIndex = 2;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::EmployeeDetails.Properties.Resources.employee;
@@ -834,6 +779,21 @@
             this.pictureBox2.Size = new System.Drawing.Size(128, 137);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
+            // 
+            // submitButton
+            // 
+            this.submitButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.submitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.submitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.submitButton.Image = global::EmployeeDetails.Properties.Resources.add;
+            this.submitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.submitButton.Location = new System.Drawing.Point(360, 226);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(91, 34);
+            this.submitButton.TabIndex = 20;
+            this.submitButton.Text = "Add";
+            this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // pictureBox3
             // 
@@ -844,6 +804,32 @@
             this.pictureBox3.TabIndex = 42;
             this.pictureBox3.TabStop = false;
             // 
+            // updateButton
+            // 
+            this.updateButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.updateButton.Image = global::EmployeeDetails.Properties.Resources.update;
+            this.updateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.updateButton.Location = new System.Drawing.Point(381, 429);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(97, 32);
+            this.updateButton.TabIndex = 41;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // updateFindButton
+            // 
+            this.updateFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.updateFindButton.Image = global::EmployeeDetails.Properties.Resources.search;
+            this.updateFindButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.updateFindButton.Location = new System.Drawing.Point(219, 55);
+            this.updateFindButton.Name = "updateFindButton";
+            this.updateFindButton.Size = new System.Drawing.Size(79, 31);
+            this.updateFindButton.TabIndex = 1;
+            this.updateFindButton.Text = "Search";
+            this.updateFindButton.UseVisualStyleBackColor = false;
+            this.updateFindButton.Click += new System.EventHandler(this.updateFindButton_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::EmployeeDetails.Properties.Resources.delete_big;
@@ -852,6 +838,32 @@
             this.pictureBox4.Size = new System.Drawing.Size(131, 125);
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.Red;
+            this.deleteButton.Image = global::EmployeeDetails.Properties.Resources.delete;
+            this.deleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteButton.Location = new System.Drawing.Point(761, 430);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(103, 34);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click_1);
+            // 
+            // deleteFindButton
+            // 
+            this.deleteFindButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.deleteFindButton.Image = global::EmployeeDetails.Properties.Resources.search;
+            this.deleteFindButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteFindButton.Location = new System.Drawing.Point(230, 62);
+            this.deleteFindButton.Name = "deleteFindButton";
+            this.deleteFindButton.Size = new System.Drawing.Size(85, 33);
+            this.deleteFindButton.TabIndex = 2;
+            this.deleteFindButton.Text = "Search";
+            this.deleteFindButton.UseVisualStyleBackColor = false;
+            this.deleteFindButton.Click += new System.EventHandler(this.deleteFindButton_Click);
             // 
             // Form1
             // 
