@@ -55,16 +55,20 @@ namespace EmployeeDetails
 
         private DataTable getSearchResults() {
             DataTable employeeDataTable = new DataTable();
-            String query = "SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE ";
             String strId = searchIdTextBox.Text;
-            String fName = searchFirstNametextBox.Text;
-            String lName = searchLastNameTextBox.Text;
+            String fName = searchFirstNametextBox.Text+"%";
+            String lName = searchLastNameTextBox.Text+"%";
 
-            if (strId.Length > 0) {
-                int id = Int32.Parse(strId);
-                query += String.Format("id='{0}'", id);
-                Console.WriteLine("queryyyyyyy>>>>>>"+query);
+            if (strId.Length == 0) {
+                strId = "%";
             }
+            if (fName.Length == 0) {
+                fName = "%";
+            }
+            if (lName.Length == 0) {
+                lName = "%";
+            }
+            String query = String.Format("SELECT first_name, last_name, age, gender, mobile, email, address1, address2, address3, department FROM employees WHERE id LIKE '{0}' AND first_name LIKE '{1}' AND last_name LIKE '{2}'", strId, fName, lName);
 
             employeeDataTable.Load(employeeService.getEmployeeDetailsDataReader(query));
             return employeeDataTable;
